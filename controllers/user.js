@@ -14,6 +14,7 @@ module.exports = {
     registerPost:(req, res) => {
         let registerArgs = req.body;
         let cities = [];
+        let roles = [];
 
         User.findOne({email: registerArgs.email}).then(user => {
             let errorMsg = '';
@@ -39,8 +40,11 @@ module.exports = {
                 };
 
                 City.findById(registerArgs.city).then(city =>{
+                    Role.findOne({name: 'User'}).then(role => {
+                        roles.push(role.id);
                     cities.push(city.id);
                     userObject.cities = cities;
+                        userObject.roles = roles;
 
                     User.create(userObject).then(user => {
                         city.users.push(user);
@@ -61,26 +65,7 @@ module.exports = {
                                 })
                             }
                         });
-                    });
-                });
-
-                let roles = [];
-                Role.findOne({name: 'User'}).then(role => {
-                    roles.push(role.id);
-
-                    userObject.roles = roles;
-                    User.create(userObject).then(user => {
-                        user.prepareInsert();
-                        req.logIn(user, (err) => {
-                            if (err) {
-                                registerArgs.error = err.message;
-                                res.render('user/register', registerArgs);
-                                return;
-                            }
-
-                            res.redirect('/');
-                        })
-                    });
+                    })});
                 });
             }
         })

@@ -4,7 +4,6 @@ const Role = require('mongoose').model('Role');
 module.exports = {
     all: (req, res) => {
         User.find({}).then(users => {
-
             for (let user of users) {
                 user.isInRole('Admin').then(isAdmin => {
                     user.isAdmin = isAdmin;
