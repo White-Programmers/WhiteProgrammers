@@ -1,2 +1,2 @@
 # WhiteProgrammers
-JS Project, app for cheating at school.
+JS Project, app for cheating at school. Test.
