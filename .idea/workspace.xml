@@ -3,12 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="c06f266b-f7bf-4a3d-b92c-848c0f5eff8c" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/database.js" afterPath="$PROJECT_DIR$/config/database.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/controllers/user.js" afterPath="$PROJECT_DIR$/controllers/user.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/models/City.js" afterPath="$PROJECT_DIR$/models/City.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/models/User.js" afterPath="$PROJECT_DIR$/models/User.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/layout.hbs" afterPath="$PROJECT_DIR$/views/layout.hbs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/user/register.hbs" afterPath="$PROJECT_DIR$/views/user/register.hbs" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -351,15 +345,23 @@
       <option name="presentableId" value="Default" />
       <updated>1479739981553</updated>
       <workItem from="1479739983767" duration="2375000" />
-      <workItem from="1479749018102" duration="6134000" />
+      <workItem from="1479749018102" duration="6204000" />
     </task>
+    <task id="LOCAL-00001" summary="Created City model and Updated Register.">
+      <created>1479755207083</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1479755207083</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="8509000" />
+    <option name="totallyTimeSpent" value="8579000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="25" width="1918" height="1055" extended-state="0" />
+    <frame x="0" y="25" width="1918" height="1055" extended-state="1" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1282586" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -386,6 +388,10 @@
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Created City model and Updated Register." />
+    <option name="LAST_COMMIT_MESSAGE" value="Created City model and Updated Register." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
