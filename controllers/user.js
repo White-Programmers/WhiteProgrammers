@@ -1,5 +1,6 @@
 const User = require('mongoose').model('User');
 const City = require('mongoose').model('City');
+const Role = require('mongoose').model('Role');
 const encryption = require('./../utilities/encryption');
 
 module.exports = {
@@ -37,7 +38,6 @@ module.exports = {
                     city: registerArgs.city
                 };
 
-
                 City.findById(registerArgs.city).then(city =>{
                     cities.push(city.id);
                     userObject.cities = cities;
@@ -61,32 +61,27 @@ module.exports = {
                                 })
                             }
                         });
-
-
-                        // req.logIn(user, (err) => {
-                        //     if (err) {
-                        //         registerArgs.error = err.message;
-                        //         res.render('user/register', registerArgs);
-                        //         return;
-                        //     }
-                        //
-                        //     res.redirect('/')
-                        // })
                     });
-
                 });
 
-                // User.create(userObject).then(user => {
-                //     req.logIn(user, (err) => {
-                //         if (err) {
-                //             registerArgs.error = err.message;
-                //             res.render('user/register', registerArgs);
-                //             return;
-                //         }
-                //
-                //         res.redirect('/')
-                //     })
-                // })
+                let roles = [];
+                Role.findOne({name: 'User'}).then(role => {
+                    roles.push(role.id);
+
+                    userObject.roles = roles;
+                    User.create(userObject).then(user => {
+                        user.prepareInsert();
+                        req.logIn(user, (err) => {
+                            if (err) {
+                                registerArgs.error = err.message;
+                                res.render('user/register', registerArgs);
+                                return;
+                            }
+
+                            res.redirect('/');
+                        })
+                    });
+                });
             }
         })
     },
