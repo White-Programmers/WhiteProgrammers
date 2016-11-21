@@ -1,13 +1,18 @@
 const User = require('mongoose').model('User');
+const City = require('mongoose').model('City');
 const encryption = require('./../utilities/encryption');
 
 module.exports = {
     registerGet: (req, res) => {
-        res.render('user/register');
+
+        City.find({}).then(cities =>{
+            res.render('user/register',{cities:cities});
+        });
     },
 
     registerPost:(req, res) => {
         let registerArgs = req.body;
+        let cities = [];
 
         User.findOne({email: registerArgs.email}).then(user => {
             let errorMsg = '';
@@ -28,20 +33,60 @@ module.exports = {
                     email: registerArgs.email,
                     passwordHash: passwordHash,
                     fullName: registerArgs.fullName,
-                    salt: salt
+                    salt: salt,
+                    city: registerArgs.city
                 };
 
-                User.create(userObject).then(user => {
-                    req.logIn(user, (err) => {
-                        if (err) {
-                            registerArgs.error = err.message;
-                            res.render('user/register', registerArgs);
-                            return;
-                        }
 
-                        res.redirect('/')
-                    })
-                })
+                City.findById(registerArgs.city).then(city =>{
+                    cities.push(city.id);
+                    userObject.cities = cities;
+
+                    User.create(userObject).then(user => {
+                        city.users.push(user);
+
+                        city.save(err =>{
+                            if(err){
+                                registerArgs.error = err.message;
+                                res.render('user/register', registerArgs);
+                            }
+                            else{
+                                req.logIn(user, (err) => {
+                                    if (err) {
+                                        registerArgs.error = err.message;
+                                        res.render('user/register', registerArgs);
+                                        return;
+                                    }
+                                    res.redirect('/');
+                                })
+                            }
+                        });
+
+
+                        // req.logIn(user, (err) => {
+                        //     if (err) {
+                        //         registerArgs.error = err.message;
+                        //         res.render('user/register', registerArgs);
+                        //         return;
+                        //     }
+                        //
+                        //     res.redirect('/')
+                        // })
+                    });
+
+                });
+
+                // User.create(userObject).then(user => {
+                //     req.logIn(user, (err) => {
+                //         if (err) {
+                //             registerArgs.error = err.message;
+                //             res.render('user/register', registerArgs);
+                //             return;
+                //         }
+                //
+                //         res.redirect('/')
+                //     })
+                // })
             }
         })
     },
