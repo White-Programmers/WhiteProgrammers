@@ -13,7 +13,7 @@ module.exports = {
 
     registerPost:(req, res) => {
         let registerArgs = req.body;
-        let cities = [];
+        let schools = [];
         let roles = [];
 
         User.findOne({email: registerArgs.email}).then(user => {
@@ -40,11 +40,11 @@ module.exports = {
                     school: registerArgs.school
                 };
 
-                School.findById(registerArgs.city).then(school =>{
+                School.findById(registerArgs.school).then(school =>{
                     Role.findOne({name: 'User'}).then(role => {
                         roles.push(role.id);
-                    schools.push(school.id);
-                    userObject.cities = cities;
+                        schools.push(school.id);
+                        userObject.schools = schools;
                         userObject.roles = roles;
 
                     User.create(userObject).then(user => {
