@@ -1,13 +1,13 @@
 const User = require('mongoose').model('User');
-const City = require('mongoose').model('City');
+const School = require('mongoose').model('School');
 const Role = require('mongoose').model('Role');
 const encryption = require('./../utilities/encryption');
 
 module.exports = {
     registerGet: (req, res) => {
 
-        City.find({}).then(cities =>{
-            res.render('user/register',{cities:cities});
+        School.find({}).then(schools =>{
+            res.render('user/register',{schools:schools});
         });
     },
 
@@ -36,31 +36,25 @@ module.exports = {
                     passwordHash: passwordHash,
                     fullName: registerArgs.fullName,
                     salt: salt,
-                    city: registerArgs.city
+                    school: registerArgs.school
                 };
 
-                City.findById(registerArgs.city).then(city =>{
+                School.findById(registerArgs.city).then(school =>{
                     Role.findOne({name: 'User'}).then(role => {
-
-
                         roles.push(role.id);
-                        cities.push(city.id);
-
-                        userObject.cities = cities;
+                    schools.push(school.id);
+                    userObject.cities = cities;
                         userObject.roles = roles;
 
                     User.create(userObject).then(user => {
+                        school.users.push(user);
 
-                        city.users.push(user);
-                        role.users.push(user);
-
-                        city.save(err =>{
+                        school.save(err =>{
                             if(err){
                                 registerArgs.error = err.message;
                                 res.render('user/register', registerArgs);
                             }
                             else{
-                                role.save();
                                 req.logIn(user, (err) => {
                                     if (err) {
                                         registerArgs.error = err.message;
@@ -71,8 +65,6 @@ module.exports = {
                                 })
                             }
                         });
-
-
                     })});
                 });
             }
