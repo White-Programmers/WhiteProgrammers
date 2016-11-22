@@ -2,9 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c06f266b-f7bf-4a3d-b92c-848c0f5eff8c" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/views/admin/user/edit.hbs" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/routes.js" afterPath="$PROJECT_DIR$/config/routes.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/controllers/admin/user.js" afterPath="$PROJECT_DIR$/controllers/admin/user.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -95,7 +94,7 @@
       <file leaf-file-name="edit.hbs" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/views/admin/user/edit.hbs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="826">
+            <state relative-caret-position="372">
               <caret line="59" column="6" lean-forward="false" selection-start-line="59" selection-start-column="6" selection-end-line="59" selection-end-column="6" />
               <folding />
             </state>
@@ -154,8 +153,8 @@
         <option value="$PROJECT_DIR$/models/User.js" />
         <option value="$PROJECT_DIR$/controllers/user.js" />
         <option value="$PROJECT_DIR$/config/routes.js" />
-        <option value="$PROJECT_DIR$/views/admin/user/edit.hbs" />
         <option value="$PROJECT_DIR$/controllers/admin/user.js" />
+        <option value="$PROJECT_DIR$/views/admin/user/edit.hbs" />
       </list>
     </option>
   </component>
@@ -450,7 +449,7 @@
       <workItem from="1479739983767" duration="2375000" />
       <workItem from="1479749018102" duration="6204000" />
       <workItem from="1479762331424" duration="1769000" />
-      <workItem from="1479810864384" duration="2376000" />
+      <workItem from="1479810864384" duration="2736000" />
     </task>
     <task id="LOCAL-00001" summary="Created City model and Updated Register.">
       <created>1479755207083</created>
@@ -459,11 +458,18 @@
       <option name="project" value="LOCAL" />
       <updated>1479755207083</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="editing user (email || fullName || password) //  add city ???">
+      <created>1479814051803</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1479814051803</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="12724000" />
+    <option name="totallyTimeSpent" value="13084000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-1" y="26" width="1368" height="743" extended-state="6" />
@@ -496,7 +502,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Created City model and Updated Register." />
-    <option name="LAST_COMMIT_MESSAGE" value="Created City model and Updated Register." />
+    <MESSAGE value="editing user (email || fullName || password) //  add city ???" />
+    <option name="LAST_COMMIT_MESSAGE" value="editing user (email || fullName || password) //  add city ???" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -737,7 +744,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/views/admin/user/edit.hbs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="826">
+        <state relative-caret-position="372">
           <caret line="59" column="6" lean-forward="false" selection-start-line="59" selection-start-column="6" selection-end-line="59" selection-end-column="6" />
           <folding />
         </state>
