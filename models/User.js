@@ -9,7 +9,7 @@ let userSchema = mongoose.Schema(
         fullName: {type: String, required: true},
         salt: {type: String, required: true},
         roles: [{type: mongoose.Schema.Types.ObjectId, ref:'Role'}],
-        city: {type: [mongoose.Schema.Types.ObjectId], ref: 'City'},
+        school: {type: [mongoose.Schema.Types.ObjectId], ref: 'School'},
         banned: {type: Boolean, required: true},
     }
 );
