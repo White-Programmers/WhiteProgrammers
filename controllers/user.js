@@ -41,13 +41,18 @@ module.exports = {
 
                 City.findById(registerArgs.city).then(city =>{
                     Role.findOne({name: 'User'}).then(role => {
+
+
                         roles.push(role.id);
-                    cities.push(city.id);
-                    userObject.cities = cities;
+                        cities.push(city.id);
+
+                        userObject.cities = cities;
                         userObject.roles = roles;
 
                     User.create(userObject).then(user => {
+
                         city.users.push(user);
+                        role.users.push(user);
 
                         city.save(err =>{
                             if(err){
@@ -55,6 +60,7 @@ module.exports = {
                                 res.render('user/register', registerArgs);
                             }
                             else{
+                                role.save();
                                 req.logIn(user, (err) => {
                                     if (err) {
                                         registerArgs.error = err.message;
@@ -65,6 +71,8 @@ module.exports = {
                                 })
                             }
                         });
+
+
                     })});
                 });
             }

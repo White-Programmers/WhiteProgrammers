@@ -31,6 +31,17 @@ userSchema.method ({
             return isInRole;
         })
     },
+
+    prepareDelete: function () {
+        for (let role of this.roles) {
+            Role.findById(role).then(role => {
+                role.users.remove(this.id);
+                role.save();
+            })
+        }
+
+        //delete posts
+    }
 });
 
 userSchema.set('versionKey', false);
