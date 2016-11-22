@@ -21,6 +21,9 @@
                 {{#if user}}
                     <div class="navbar-collapse collapse">
                         <ul class="nav navbar-nav navbar-right">
+                    {{#if isAdmin}}
+                        <li><a href="/admin/user/all">Users</a></li>
+                    {{/if}}
                             <li><a href="/user/details">Welcome({{user.email}})</a></li>
                             <li><a href="/article/create">New Article</a></li>
                             <li><a href="/user/logout">Logout</a></li>

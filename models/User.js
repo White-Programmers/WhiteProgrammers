@@ -9,7 +9,8 @@ let userSchema = mongoose.Schema(
         fullName: {type: String, required: true},
         salt: {type: String, required: true},
         roles: [{type: mongoose.Schema.Types.ObjectId, ref:'Role'}],
-        city: {type: [mongoose.Schema.Types.ObjectId], ref: 'City'}
+        city: {type: [mongoose.Schema.Types.ObjectId], ref: 'City'},
+        banned: {type: Boolean, required: true},
     }
 );
 
@@ -31,6 +32,14 @@ userSchema.method ({
             return isInRole;
         })
     },
+
+    isBanned: function () {
+        if (!this.banned) {
+            return false;
+        }
+
+        return true;
+    }
 
     prepareDelete: function () {
         for (let role of this.roles) {

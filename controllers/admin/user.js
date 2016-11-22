@@ -8,7 +8,8 @@ module.exports = {
             for (let user of users) {
                 user.isInRole('Admin').then(isAdmin => {
                     user.isAdmin = isAdmin;
-                })
+                });
+                user.isBanned = user.isBanned();
             }
 
             res.render('admin/user/all', {users: users});
@@ -81,8 +82,36 @@ module.exports = {
                 });
             }
         });
+    },
 
+    ban: (req, res) => {
+        let id = req.params.id;
+        User.findById(id).then(user => {
+            user.banned = true;
 
+            user.save((err) => {
+                if (err) {
+                    res.redirect('/');
+                } else {
+                    res.redirect('/admin/user/all');
+                }
+            })
+        })
+    },
+
+    unban: (req, res) => {
+        let id = req.params.id;
+        User.findById(id).then(user => {
+            user.banned = false;
+
+            user.save((err) => {
+                if (err) {
+                    res.redirect('/');
+                } else {
+                    res.redirect('/admin/user/all');
+                }
+            })
+        })
     },
 
     deletePost: (req, res) => {

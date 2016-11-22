@@ -36,7 +36,8 @@ module.exports = {
                     passwordHash: passwordHash,
                     fullName: registerArgs.fullName,
                     salt: salt,
-                    city: registerArgs.city
+                    city: registerArgs.city,
+                    banned: false,
                 };
 
                 City.findById(registerArgs.city).then(city =>{
@@ -86,6 +87,12 @@ module.exports = {
     loginPost: (req, res) => {
         let loginArgs = req.body;
         User.findOne({email: loginArgs.email}).then(user => {
+            if (user.banned) {
+                let errorMsg = 'User is banned!';
+                loginArgs.error = errorMsg;
+                res.render('user/login', loginArgs);
+                return;
+            }
             if (!user ||!user.authenticate(loginArgs.password)) {
                 let errorMsg = 'Either username or password is invalid!';
                 loginArgs.error = errorMsg;

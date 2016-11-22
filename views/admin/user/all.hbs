@@ -13,11 +13,13 @@
                 </thead>
                 <tbody>
                 {{#each users}}
-                    <tr {{#if this.isAdmin }}class="info" {{/if}}>
+                    <tr class="{{#if this.isAdmin }}info{{/if}} {{#if this.isBanned }}shit{{/if}}">
                         <td>{{ this.id }}</td>
                         <td>{{ this.fullName }}</td>
                         <td>{{ this.email }}</td>
                         <td>
+                            {{#if this.isBanned}}<a href="/admin/user/unban/{{this.id}}">Unban</a>
+                            {{else}}<a href="/admin/user/ban/{{this.id}}">Ban</a>{{/if}}
                             <a href="/admin/user/edit/{{this.id}}">Edit</a>
                             <a href="/admin/user/delete/{{this.id}}">Delete</a>
                         </td>

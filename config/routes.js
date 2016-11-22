@@ -32,6 +32,9 @@ module.exports = (app) => {
     app.get('/admin/user/edit/:id', adminController.user.editGet);
     app.post('/admin/user/edit/:id', adminController.user.editPost);
 
+    app.get('/admin/user/ban/:id', adminController.user.ban);
+    app.get('/admin/user/unban/:id', adminController.user.unban);
+
     app.get('/admin/user/delete/:id', adminController.user.deletePost);
 };
 

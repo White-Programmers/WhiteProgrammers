@@ -2347,7 +2347,7 @@ th {
   border-bottom-width: 2px;
 }
 .table-striped > tbody > tr:nth-of-type(odd) {
-  background-color: #f9f9f9;
+  /*background-color: #f9f9f9; */
 }
 .table-hover > tbody > tr:hover {
   background-color: #ecf0f1;
@@ -2419,13 +2419,7 @@ table th[class*="col-"] {
 .table > tfoot > tr.info > th {
   background-color: #3498db;
 }
-.table-hover > tbody > tr > td.info:hover,
-.table-hover > tbody > tr > th.info:hover,
-.table-hover > tbody > tr.info:hover > td,
-.table-hover > tbody > tr:hover > .info,
-.table-hover > tbody > tr.info:hover > th {
-  background-color: #258cd1;
-}
+
 .table > thead > tr > td.warning,
 .table > tbody > tr > td.warning,
 .table > tfoot > tr > td.warning,
@@ -7055,4 +7049,14 @@ article .author  {
 }
 article .author  {
   content: '\2014 \00A0';
+}
+
+.shit {
+  background: red;
+  color: #fff;
+}
+
+
+.shit:hover {
+  background: red !important;
 }
