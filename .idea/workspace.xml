@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c06f266b-f7bf-4a3d-b92c-848c0f5eff8c" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/models/School.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/database.js" afterPath="$PROJECT_DIR$/config/database.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -444,7 +442,7 @@
       <workItem from="1479749018102" duration="6204000" />
       <workItem from="1479762331424" duration="1769000" />
       <workItem from="1479810864384" duration="2736000" />
-      <workItem from="1479825062618" duration="140000" />
+      <workItem from="1479825062618" duration="178000" />
     </task>
     <task id="LOCAL-00001" summary="Created City model and Updated Register.">
       <created>1479755207083</created>
@@ -460,11 +458,18 @@
       <option name="project" value="LOCAL" />
       <updated>1479814051803</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Added School Model">
+      <created>1479825217170</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1479825217170</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="13224000" />
+    <option name="totallyTimeSpent" value="13262000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="25" width="1918" height="1055" extended-state="0" />
@@ -498,7 +503,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Created City model and Updated Register." />
     <MESSAGE value="editing user (email || fullName || password) //  add city ???" />
-    <option name="LAST_COMMIT_MESSAGE" value="editing user (email || fullName || password) //  add city ???" />
+    <MESSAGE value="Added School Model" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added School Model" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
