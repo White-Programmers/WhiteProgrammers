@@ -39,7 +39,7 @@ userSchema.method ({
         }
 
         return true;
-    }
+    },
 
     prepareDelete: function () {
         for (let role of this.roles) {
@@ -50,7 +50,7 @@ userSchema.method ({
         }
 
         //delete posts
-    }
+    },
 });
 
 userSchema.set('versionKey', false);
