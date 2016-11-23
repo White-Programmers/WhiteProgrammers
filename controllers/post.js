@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 const Post = mongoose.model('Post');
 
 module.exports = {
-  postCreateGet:(req,res) => {
+    postCreateGet:(req,res) => {
         if(req.isAuthenticated()){
                res.render('post/create');
         }

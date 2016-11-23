@@ -45,5 +45,6 @@ module.exports = (app) => {
     app.get('/admin/post/all', adminController.post.all);
 
     app.get('/admin/post/edit/:id', adminController.post.editGet);
+    app.post('/admin/post/edit/:id', adminController.post.editPost);
 };
 
