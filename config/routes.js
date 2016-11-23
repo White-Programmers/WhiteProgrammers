@@ -16,6 +16,7 @@ module.exports = (app) => {
 
     app.get('/post/new',postController.postCreateGet);
     app.post('/post/new',postController.postCreatePost);
+    app.get('/post/details/:id',postController.details);
 
     app.use((req, res, next) => {
         if(req.isAuthenticated()) {

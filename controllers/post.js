@@ -50,4 +50,11 @@ module.exports = {
             });
         });
     },
+
+    details: (req, res) => {
+        let id = req.params.id;
+        Post.findById(id).populate('author').then(post => {
+            res.render('post/details', {post: post});
+        });
+    },
 };

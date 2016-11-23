@@ -1,19 +1,27 @@
 <div class="container">
     <div class="row">
-        {{#each posts}}
-            <div class="col-md-6">
-                <div class="panel panel-primary">
-                    <div class="panel-heading">
-                        <h3 class="panel-title">{{this.title}}</h3>
+       <div class="col-md-6 col-md-offset-4">
+            <fieldset>
+                {{#if user}}
+                    <div class="row">
+                        <div class="form-group col-md-12 col-md-offset-1">
+                            <a href="/post/new" class="btn btn-primary btn-lg" role="button">Add Post</a>
+                        </div>
                     </div>
-                    <div class="panel-body">
-                        {{this.content}}
-                    </div>
-                    <div class="panel-footer">
-                        {{this.author.fullName}}
-                    </div>
+                {{/if}}
+                <div class="form-group">
+                    <label for="school">School</label>
+                    <input type="text" class="form-control" id="school" placeholder="School">
                 </div>
-            </div>
-        {{/each}}
+                <div class="form-group">
+                    <label for="class">Class</label>
+                    <input type="text" class="form-control" id="class" placeholder="Class">
+                </div>
+                <div class="form-group">
+                    <label for="subject">Subject</label>
+                    <input type="text" class="form-control" id="subject" placeholder="Subject">
+                </div>
+            </fieldset>
+       </div>
     </div>
 </div>
