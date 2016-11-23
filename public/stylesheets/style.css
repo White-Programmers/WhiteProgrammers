@@ -36,6 +36,10 @@ section,
 summary {
   display: block;
 }
+footer{
+  position: absolute;
+  bottom: 0;
+}
 audio,
 canvas,
 progress,
