@@ -10,6 +10,7 @@ let userSchema = mongoose.Schema(
         salt: {type: String, required: true},
         roles: [{type: mongoose.Schema.Types.ObjectId, ref:'Role'}],
         school: {type: [mongoose.Schema.Types.ObjectId], ref: 'School'},
+        posts: {type: [mongoose.Schema.Types.ObjectId], ref: 'Post'},
         banned: {type: Boolean, required: true},
     }
 );

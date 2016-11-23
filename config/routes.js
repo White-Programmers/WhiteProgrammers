@@ -1,6 +1,7 @@
 const userController = require('./../controllers/user');
 const homeController = require('./../controllers/home');
 const adminController = require('./../controllers/admin/admin');
+const postController = require('./../controllers/post');
 
 module.exports = (app) => {
     app.get('/', homeController.index);
@@ -12,6 +13,9 @@ module.exports = (app) => {
     app.post('/user/login', userController.loginPost);
 
     app.get('/user/logout', userController.logout);
+
+    app.get('/post/new',postController.postCreateGet);
+    app.post('/post/new',postController.postCreatePost);
 
     app.use((req, res, next) => {
         if(req.isAuthenticated()) {
@@ -36,5 +40,7 @@ module.exports = (app) => {
     app.get('/admin/user/unban/:id', adminController.user.unban);
 
     app.get('/admin/user/delete/:id', adminController.user.deletePost);
+
+
 };
 
