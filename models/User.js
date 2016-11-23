@@ -11,7 +11,7 @@ let userSchema = mongoose.Schema(
         roles: [{type: mongoose.Schema.Types.ObjectId, ref:'Role'}],
         school: {type: [mongoose.Schema.Types.ObjectId], ref: 'School'},
         posts: {type: [mongoose.Schema.Types.ObjectId], ref: 'Post'},
-        banned: {type: Boolean, required: true},
+        banned: {type: Boolean},
     }
 );
 

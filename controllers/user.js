@@ -79,18 +79,18 @@ module.exports = {
     loginPost: (req, res) => {
         let loginArgs = req.body;
         User.findOne({email: loginArgs.email}).then(user => {
-            if (user.banned) {
-                let errorMsg = 'User is banned!';
-                loginArgs.error = errorMsg;
-                res.render('user/login', loginArgs);
-                return;
-            }
             if (!user ||!user.authenticate(loginArgs.password)) {
                 let errorMsg = 'Either username or password is invalid!';
                 loginArgs.error = errorMsg;
                 res.render('user/login', loginArgs);
                 return;
+            } if (user.banned) {
+                let errorMsg = 'User is banned!';
+                loginArgs.error = errorMsg;
+                res.render('user/login', loginArgs);
+                return;
             }
+
 
             req.logIn(user, (err) => {
                 if (err) {

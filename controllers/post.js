@@ -7,7 +7,7 @@ module.exports = {
                res.render('post/create');
         }
         else{
-            res.redirect(200,'/');
+            res.redirect('/');
         }
   },
 
@@ -23,10 +23,10 @@ module.exports = {
             errMsg = 'Please enter title!';
         }
         else if (!createPostArgs.content) {
-            errMsg = 'Please enter content';
+            errMsg = 'Please enter content!';
         }
         else if(!createPostArgs.imgUrl){
-            errMsg = 'Please add image url';
+            errMsg = 'Please add image url!';
         }
 
         if (errMsg) {
@@ -42,10 +42,10 @@ module.exports = {
             req.user.posts.push(post.id);
             req.user.save(err => {
                 if (err) {
-                    res.redirect(200,'/', {error: errMsg});
+                    res.redirect('/', {error: errMsg});
                 }
                 else {
-                    res.redirect(200,'/');
+                    res.redirect('/');
                 }
             });
         });
