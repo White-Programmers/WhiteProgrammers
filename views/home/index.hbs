@@ -1,0 +1,19 @@
+<div class="container">
+    <div class="row">
+        {{#each posts}}
+            <div class="col-md-6">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">{{this.title}}</h3>
+                    </div>
+                    <div class="panel-body">
+                        {{this.content}}
+                    </div>
+                    <div class="panel-footer">
+                        {{this.author.fullName}}
+                    </div>
+                </div>
+            </div>
+        {{/each}}
+    </div>
+</div>

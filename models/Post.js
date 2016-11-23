@@ -15,7 +15,7 @@ postSchema.method({
         let User = mongoose.model('User');
         User.findById(this.author).then(user =>{
             if(user){
-                user.articles.push(this.id);
+                user.posts.push(this.id);
                 user.save();
             }
         });
