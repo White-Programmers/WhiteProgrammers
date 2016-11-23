@@ -1,0 +1,30 @@
+<div class="container body-content">
+    <div class="well">
+        <h2>All Posts</h2>
+        <div class="row">
+            <table class="table table-striped table-hover ">
+                <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Title</th>
+                    <th>Content</th>
+                    <th>Author</th>
+                </tr>
+                </thead>
+                <tbody>
+                {{#each posts}}
+                        <td>{{ this.id }}</td>
+                        <td>{{ this.title }}</td>
+                        <td>{{ this.content }}</td>
+                        <td>{{ this.author.fullName }}</td>
+                        <td>
+                            <a href="edit/{{this.id}}">Edit</a>
+                            <a href="admin/post/delete/{{this.id}}">Delete</a>
+                        </td>
+                    </tr>
+                {{/each}}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
