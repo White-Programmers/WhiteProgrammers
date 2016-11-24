@@ -14,5 +14,25 @@ module.exports = {
                 res.render('admin/post/edit', {post: post});
             });
     },
+
+    editPost: (req, res) => {
+        let id = req.params.id;
+        let postArgs = req.body;
+
+        Post.findById(id).then(post => {
+            post.title = postArgs.title;
+            post.content = postArgs.content;
+            post.subject = postArgs.subject;
+            post.classLevel = postArgs.classLevel;
+
+            post.save((err) => {
+                if (err) {
+                    res.redirect('/');
+                } else {
+                    res.redirect('/admin/post/all');
+                }
+            })
+        });
+    },
 };
 
