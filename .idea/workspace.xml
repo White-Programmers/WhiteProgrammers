@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="c06f266b-f7bf-4a3d-b92c-848c0f5eff8c" name="Default" comment="doesn't look like shit any longer">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/stylesheets/style2.css" afterPath="$PROJECT_DIR$/public/stylesheets/style2.css" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -36,8 +37,8 @@
       <file leaf-file-name="style2.css" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/public/stylesheets/style2.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="324">
-              <caret line="36" column="7" lean-forward="false" selection-start-line="36" selection-start-column="7" selection-end-line="36" selection-end-column="7" />
+            <state relative-caret-position="414">
+              <caret line="41" column="2" lean-forward="false" selection-start-line="41" selection-start-column="2" selection-end-line="41" selection-end-column="2" />
               <folding />
             </state>
           </provider>
@@ -223,7 +224,7 @@
     <property name="js.eslint.eslintPackage" value="" />
     <property name="js-jscs-nodeInterpreter" value="/usr/bin/node" />
     <property name="SearchEverywhereHistoryKey" value="settings&#9;ACTION&#9;WelcomeScreen.Settings&#10;sett&#9;ACTION&#9;WelcomeScreen.Settings" />
-    <property name="settings.editor.selected.configurable" value="Settings.JavaScript" />
+    <property name="settings.editor.selected.configurable" value="settings.github" />
     <property name="JavaScriptPreferStrict" value="false" />
     <property name="JavaScriptWeakerCompletionTypeGuess" value="true" />
   </component>
@@ -454,7 +455,7 @@
       <workItem from="1479911690448" duration="124000" />
       <workItem from="1479911905896" duration="4221000" />
       <workItem from="1479991256101" duration="161000" />
-      <workItem from="1479991490028" duration="4591000" />
+      <workItem from="1479991490028" duration="4787000" />
     </task>
     <task id="LOCAL-00001" summary="Created City model and Updated Register.">
       <created>1479755207083</created>
@@ -505,11 +506,18 @@
       <option name="project" value="LOCAL" />
       <updated>1479995626811</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="doesn't look like shit any longer">
+      <created>1479996108231</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1479996108231</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="23554000" />
+    <option name="totallyTimeSpent" value="23750000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="65" y="24" width="1301" height="744" extended-state="6" />
@@ -860,8 +868,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/public/stylesheets/style2.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
-          <caret line="36" column="7" lean-forward="false" selection-start-line="36" selection-start-column="7" selection-end-line="36" selection-end-column="7" />
+        <state relative-caret-position="414">
+          <caret line="41" column="2" lean-forward="false" selection-start-line="41" selection-start-column="2" selection-end-line="41" selection-end-column="2" />
           <folding />
         </state>
       </provider>

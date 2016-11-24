@@ -37,7 +37,9 @@ summary {
 footer{
   position: absolute;
   bottom: 0;
-  top: 5;
+}
+.something{
+  
 }
 audio,
 canvas,
