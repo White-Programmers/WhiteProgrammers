@@ -11,7 +11,7 @@ let userSchema = mongoose.Schema(
         roles: [{type: mongoose.Schema.Types.ObjectId, ref:'Role'}],
         school: {type: [mongoose.Schema.Types.ObjectId], ref: 'School'},
         posts: {type: [mongoose.Schema.Types.ObjectId], ref: 'Post'},
-        banned: {type: Boolean},
+        banned: {type: Boolean}
     }
 );
 
@@ -43,6 +43,8 @@ userSchema.method ({
     },
 
     prepareDelete: function () {
+        const Post = mongoose.model('Post');
+
         for (let role of this.roles) {
             Role.findById(role).then(role => {
                 role.users.remove(this.id);
@@ -51,7 +53,13 @@ userSchema.method ({
         }
 
         //delete posts
-    },
+
+        for (let post of this.posts) {
+            Post.findById(post).then(post => {
+                post.remove();
+            });
+        }
+    }
 });
 
 userSchema.set('versionKey', false);

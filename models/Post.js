@@ -25,9 +25,9 @@ postSchema.method({
 
     prepareDelete: function () {
         let User = mongoose.model('User');
-        User.findById(this.author).then(user =>{
+        User.findById(this.author.id).then(user =>{
             if(user){
-                user.article.remove(this.id);
+                user.posts.remove(this.id);
                 user.save();
             }
         });
