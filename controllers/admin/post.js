@@ -34,5 +34,23 @@ module.exports = {
             })
         });
     },
+
+    postDelete: (req, res) => {
+        let id = req.params.id;
+        Post.findById(id).populate('author').then(posts => {
+            if (req.isAuthenticated()) {
+                req.user.isInRole('Admin').then(isAdmin => {
+                    if (isAdmin) {
+                        posts.prepareDelete();
+                        posts.remove();
+                        res.redirect('/admin/post/all');
+                    }
+                });
+            }
+            else {
+                res.redirect('/admin/post/all');
+            }
+        });
+    },
 };
 
