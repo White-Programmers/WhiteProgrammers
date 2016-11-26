@@ -25,6 +25,7 @@
                     <div class="navbar-collapse collapse">
                         <ul class="nav navbar-nav navbar-right">
                     {{#if isAdmin}}
+                        <li><a href="/admin/school/add">Add School</a></li>
                         <li><a href="/admin/subject/add">Add Subject</a></li>
                         <li><a href="/admin/user/all">Users</a></li>
                         <li><a href="/admin/post/all">Posts</a></li>
@@ -47,7 +48,11 @@
         </div>
     </header>
     {{#if error }}
-        <h2>{{error}}</h2>
+        <div class="container">
+            <div class="alert alert-danger">
+                <strong>Error:</strong> {{error}}
+            </div>
+        </div>
     {{/if}}
     {{{body}}}
 </body>
