@@ -1,8 +1,10 @@
 const Post = require('mongoose').model('Post');
+const School = require('mongoose').model('School');
+const Subject = require('mongoose').model('Subject');
 
 module.exports = {
     all: (req, res) => {
-        Post.find({}).populate('author').then(posts => {
+        Post.find({}).populate('author').populate('school').populate('subject').then(posts => {
             res.render('admin/post/all', {posts: posts});
         });
     },
@@ -10,9 +12,37 @@ module.exports = {
     editGet: (req, res) => {
         let id = req.params.id;
 
-        Post.findById(id).then(post => {
-                res.render('admin/post/edit', {post: post});
+        Post.findById(id).populate('school').populate('subject').then(post => {
+            School.find({}).then(schools =>{
+
+                for (let school of schools) {
+
+                    if(school.id === post.school.id)
+                    {
+                        school.isActive = true;
+
+                    }else
+                    {
+                        school.isActive = false;
+                    }
+                }
+
+                Subject.find({}).then(subjects =>{
+                    for (let subject of subjects) {
+
+                        if(subject.id === post.subject.id)
+                        {
+                            subject.isActive = true;
+
+                        }else
+                        {
+                            subject.isActive = false;
+                        }
+                    }
+                    res.render('admin/post/edit', {post: post, schools: schools, subjects: subjects});
+                });
             });
+        });
     },
 
     editPost: (req, res) => {
@@ -24,6 +54,7 @@ module.exports = {
             post.content = postArgs.content;
             post.subject = postArgs.subject;
             post.classLevel = postArgs.classLevel;
+            post.school = postArgs.school;
 
             post.save((err) => {
                 if (err) {

@@ -5,8 +5,9 @@ let postSchema = mongoose.Schema(
         title:{type: String, required: true},
         content:{type: String},
         author:{type: mongoose.Schema.Types.ObjectId, required: true,ref:'User'},
-        subject: {type: String},
+        subject: {type: mongoose.Schema.Types.ObjectId, required: true,ref:'Subject'},
         classLevel: {type: String},
+        school:{type: mongoose.Schema.Types.ObjectId, required: true,ref:'School'},
         imgUrl:{type: String},
         date:{type: Date, default: Date.now()}
     }

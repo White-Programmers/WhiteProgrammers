@@ -8,7 +8,9 @@
                     <th>#</th>
                     <th>Title</th>
                     <th>Content</th>
-                    <th>Клас</th>
+                    <th>Subject</th>
+                    <th>School</th>
+                    <th>Class</th>
                     <th>Author</th>
                 </tr>
                 </thead>
@@ -17,6 +19,8 @@
                         <td>{{ this.id }}</td>
                         <td>{{ this.title }}</td>
                         <td>{{ this.content }}</td>
+                        <td>{{ this.subject.name }}</td>
+                        <td>{{ this.school.name }}</td>
                         <td>{{ this.classLevel }}</td>
                         <td>{{ this.author.fullName }}</td>
                         <td>

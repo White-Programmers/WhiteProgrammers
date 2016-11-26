@@ -19,17 +19,41 @@
                         </textarea>
                     </div>
                 </div>
+
+
                 <div class="form-group">
-                    <label class="col-sm-4 control-label" for="title">Subject</label>
-                    <div class="col-sm-4 ">
-                        <input type="text" class="form-control" id="title" placeholder="Title" name="subject"
-                               required value="{{post.subject}}">
+                    <label class="col-sm-4 control-label">School</label>
+                    <div class="col-sm-4">
+                        <select class="form-control" name="school" id="school">
+
+                            {{#each schools}}
+                                {{#if this.isActive}}<option selected value="{{this.id}}">{{this.name}}</option>
+                                {{else}}<option  value="{{this.id}}">{{this.name}}</option>{{/if}}
+
+                            {{/each}}
+
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-sm-4 control-label">Subject</label>
+                    <div class="col-sm-4">
+                        <select class="form-control" name="subject" id="subject">
+
+                            {{#each subjects}}
+                                {{#if this.isActive}}<option selected value="{{this.id}}">{{this.name}}</option>
+                                {{else}}<option  value="{{this.id}}">{{this.name}}</option>{{/if}}
+
+                            {{/each}}
+
+                        </select>
                     </div>
                 </div>
                 <div class="form-group">
                     <label class="col-sm-4 control-label" for="title">Class</label>
                     <div class="col-sm-4 ">
-                        <input type="text" class="form-control" id="title" placeholder="Class" name="classLevel"
+                        <input type="text" class="form-control" id="classLevel" placeholder="Class" name="classLevel"
                                required value="{{post.classLevel}}">
                     </div>
                 </div>

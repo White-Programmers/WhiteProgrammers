@@ -1,11 +1,17 @@
 const mongoose = require('mongoose');
+const School = mongoose.model('School');
+const Subject = mongoose.model('Subject');
 const Post = mongoose.model('Post');
 
 module.exports = {
     postCreateGet:(req,res) => {
-        if(req.isAuthenticated()){
-               res.render('post/create');
-        }
+            if(req.isAuthenticated()){
+                School.find({}).then(schools =>{
+                    Subject.find({}).then(subjects => {
+                        res.render('post/create', {schools: schools, subjects: subjects});
+                    });
+                });
+            }
         else{
             res.redirect('/');
         }

@@ -18,6 +18,7 @@ module.exports = (config) => {
     require('./../models/User').seedAdmin();
     require('./../models/School');
     require('./../models/Post');
+    require('./../models/Subject');
 
 };
 
