@@ -56,6 +56,11 @@ module.exports = {
             post.classLevel = postArgs.classLevel;
             post.school = postArgs.school;
 
+
+            if(req.file) {
+                post.imgUrl = req.file.filename;
+            }
+
             post.save((err) => {
                 if (err) {
                     res.redirect('/');

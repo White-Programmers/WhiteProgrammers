@@ -1,6 +1,14 @@
 const express = require('express');
 const config = require('./config/config');
+const multer = require('multer');
+const bodyParser = require('body-parser');
+const path = require('path');
+
 const app = express();
+app.use(express.static(__dirname + '/uploads/'));
+app.use(bodyParser.json());
+
+
 
 let env = 'development';
 require('./config/database')(config[env]);

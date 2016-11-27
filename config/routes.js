@@ -4,6 +4,7 @@ const adminController = require('./../controllers/admin/admin');
 const postController = require('./../controllers/post');
 const subjectController = require('./../controllers/admin/subject');
 const schoolController = require('./../controllers/admin/school');
+const multer = require('multer'); // po nekva prichina v app.js ne bachka
 
 module.exports = (app) => {
     app.get('/', homeController.index);
@@ -17,7 +18,10 @@ module.exports = (app) => {
     app.get('/user/logout', userController.logout);
 
     app.get('/post/new',postController.postCreateGet);
-    app.post('/post/new',postController.postCreatePost);
+    //app.post('/post/new',postController.postCreatePost);
+
+
+    app.post('/post/new', multer({ dest: './uploads/'}).single('upl'), postController.postCreatePost);
     app.get('/post/details/:id',postController.details);
 
     app.use((req, res, next) => {
@@ -47,7 +51,8 @@ module.exports = (app) => {
     app.get('/admin/post/all', adminController.post.all);
 
     app.get('/admin/post/edit/:id', adminController.post.editGet);
-    app.post('/admin/post/edit/:id', adminController.post.editPost);
+    app.post('/admin/post/edit/:id', multer({ dest: './uploads/'}).single('file'), adminController.post.editPost);
+
     app.get('/admin/post/delete/:id',adminController.post.postDelete);
 
     app.get('/homepage/homepage', homeController.homepage);

@@ -1,7 +1,7 @@
 <div class="container body-content span=8 offset=2">
     <div class="well">
         <form class="form-horizontal"
-              action="/admin/post/edit/{{post.id}}" method="post">
+              action="/admin/post/edit/{{post.id}}" enctype="multipart/form-data" method="post">
             <fieldset>
                 <legend>Edit Post</legend>
                 <div class="form-group">
@@ -55,6 +55,18 @@
                     <div class="col-sm-4 ">
                         <input type="text" class="form-control" id="classLevel" placeholder="Class" name="classLevel"
                                required value="{{post.classLevel}}">
+                    </div>
+                </div>
+                <div class="form-group">
+
+                    <div class="col-sm-12">
+                        <img src="../../../{{post.imgUrl}}" style="width: 100%; height: 100%">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-4 control-label" for="imgUrl">Choose new image?</label>
+                    <div class="col-sm-4 ">
+                        <input type="file" name="file" class="form-control" id="file">
                     </div>
                 </div>
 

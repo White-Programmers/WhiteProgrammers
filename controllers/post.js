@@ -18,6 +18,7 @@ module.exports = {
   },
 
     postCreatePost: (req, res) => {
+
         let createPostArgs = req.body;
 
         let errMsg = '';
@@ -31,9 +32,7 @@ module.exports = {
         else if (!createPostArgs.content) {
             errMsg = 'Please enter content!';
         }
-        else if(!createPostArgs.imgUrl){
-            errMsg = 'Please add image url!';
-        }
+
 
         if (errMsg) {
             createPostArgs.error = errMsg;
@@ -42,6 +41,7 @@ module.exports = {
         }
 
         createPostArgs.author = req.user.id;
+        createPostArgs.imgUrl = req.file.filename;
 
         Post.create(createPostArgs).then(post => {
             post.prepareInsert();
