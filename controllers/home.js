@@ -38,15 +38,19 @@ module.exports = {
 
         Post.findById(id).populate('school').populate('subject').then(post => {
             School.find({}).then(schools =>{
+
                 for (let school of schools) {
+
                     if(school.id === post.school.id)
                     {
                         school.isActive = true;
+
                     }else
                     {
                         school.isActive = false;
                     }
                 }
+
                 Subject.find({}).then(subjects =>{
                     for (let subject of subjects) {
 
@@ -59,9 +63,10 @@ module.exports = {
                             subject.isActive = false;
                         }
                     }
-                    res.render('admin/post/edit', {post: post, schools: schools, subjects: subjects});
+                    res.render('home/view', {post: post, schools: schools, subjects: subjects});
                 });
             });
         });
-    }
+
+    },
 };

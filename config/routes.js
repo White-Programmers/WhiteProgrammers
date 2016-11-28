@@ -26,7 +26,7 @@ module.exports = (app) => {
 
     app.post('/results', homeController.resultsGet);
 
-    app.get('/results/view/:id', homeController.viewPostGet);
+    app.get('/view/:id', homeController.viewPostGet);
 
     app.use((req, res, next) => {
         if(req.isAuthenticated()) {
