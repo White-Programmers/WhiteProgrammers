@@ -34,12 +34,17 @@ section,
 summary {
   display: block;
 }
-footer{
-  position: absolute;
-  bottom: 0;
+html, body{
+  height: 100%;
+}
+.container{
+  min-height: 100%;
+}
+body{
+  padding-bottom: 71px;
 }
 .loginButon{
-    margin-left: 30%;
+    margin-left: 13%;
 }
 audio,
 canvas,
