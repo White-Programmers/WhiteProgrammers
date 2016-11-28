@@ -24,6 +24,10 @@ module.exports = (app) => {
     app.get('/post/details/:id',postController.details);
     app.post('/post/new', multer({ dest: './uploads/'}).single('upl'), postController.postCreatePost);
 
+    app.post('/results', homeController.resultsGet);
+
+    app.get('/results/view/:id', homeController.viewPostGet);
+
     app.use((req, res, next) => {
         if(req.isAuthenticated()) {
             req.user.isInRole('Admin').then(isAdmin => {

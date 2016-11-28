@@ -1,0 +1,82 @@
+<div class="container body-content span=8 offset=2">
+    <div class="well">
+        <form class="form-horizontal"
+              action="/results/view/{{post.id}}" enctype="multipart/form-data" method="post">
+            <fieldset>
+                <legend>Edit Post</legend>
+                <div class="form-group">
+                    <label class="col-sm-4 control-label" for="title">Title</label>
+                    <div class="col-sm-4 ">
+                        <input type="text" class="form-control" id="title" placeholder="Title" name="title"
+                               required value="{{post.title}}">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-4 control-label" for="content">Content</label>
+                    <div class="col-sm-4 ">
+                        <textarea class="form-control" rows="5" id="content" placeholder="Content"
+                                  required name="content" value="{{post.content}}">{{post.content}}
+                        </textarea>
+                    </div>
+                </div>
+
+
+                <div class="form-group">
+                    <label class="col-sm-4 control-label">School</label>
+                    <div class="col-sm-4">
+                        <select class="form-control" name="school" id="school">
+
+                            {{#each schools}}
+                                {{#if this.isActive}}<option selected value="{{this.id}}">{{this.name}}</option>
+                                {{else}}<option  value="{{this.id}}">{{this.name}}</option>{{/if}}
+
+                            {{/each}}
+
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-sm-4 control-label">Subject</label>
+                    <div class="col-sm-4">
+                        <select class="form-control" name="subject" id="subject">
+
+                            {{#each subjects}}
+                                {{#if this.isActive}}<option selected value="{{this.id}}">{{this.name}}</option>
+                                {{else}}<option  value="{{this.id}}">{{this.name}}</option>{{/if}}
+
+                            {{/each}}
+
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-4 control-label" for="title">Class</label>
+                    <div class="col-sm-4 ">
+                        <input type="text" class="form-control" id="classLevel" placeholder="Class" name="classLevel"
+                               required value="{{post.classLevel}}">
+                    </div>
+                </div>
+                <div class="form-group">
+
+                    <div class="col-sm-12">
+                        <img src="../../../{{post.imgUrl}}" style="width: 100%; height: 100%">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-4 control-label" for="imgUrl">Choose new image?</label>
+                    <div class="col-sm-4 ">
+                        <input type="file" name="file" class="form-control" id="file">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-sm-4 col-sm-offset-4">
+                        <button type="reset" class="btn btn-default">Cancel</button>
+                        <button type="submit" class="btn btn-primary">Edit</button>
+                    </div>
+                </div>
+            </fieldset>
+        </form>
+    </div>
+</div>

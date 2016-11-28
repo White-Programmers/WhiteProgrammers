@@ -18,7 +18,6 @@ module.exports = {
     },
 
     postCreatePost: (req, res) => {
-
         let createPostArgs = req.body;
 
         let errMsg = '';

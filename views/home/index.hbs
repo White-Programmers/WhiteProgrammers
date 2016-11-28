@@ -1,7 +1,6 @@
 <div class="container">
     <div class="row">
         <div class="col-md-6 col-md-offset-4">
-            <fieldset>
                 {{#if user}}
                     <div class="row">
                         <div class="form-group col-md-4 col-md-offset-2">
@@ -9,6 +8,8 @@
                         </div>
                     </div>
                 {{/if}}
+
+            <form method="post" action="/results">
                 <div class="form-group">
                     <label for="school">School</label>
                         <select class="form-control" name="school" id="school">
@@ -19,7 +20,7 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="subject">Class</label>
+                    <label for="classLevel">Class</label>
                         <select class="form-control" name="classLevel" id="classLevel">
                             <option value="1">1</option>
                             <option value="2">2</option>
@@ -50,6 +51,8 @@
                         <button type="submit" class="btn btn-primary">Search</button>
                     </div>
                 </div>
+
+            </form>
             </fieldset>
        </div>
     </div>
