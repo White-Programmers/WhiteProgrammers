@@ -84,7 +84,7 @@ module.exports = {
                 loginArgs.error = errorMsg;
                 res.render('user/login', loginArgs);
                 return;
-            } if (user.banned) {
+            } else if (user.banned) {
                 let errorMsg = 'User is banned!';
                 loginArgs.error = errorMsg;
                 res.render('user/login', loginArgs);

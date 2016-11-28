@@ -11,16 +11,40 @@
                 {{/if}}
                 <div class="form-group">
                     <label for="school">School</label>
-                    <input type="text" class="form-control" id="school" placeholder="School">
+                        <select class="form-control" name="school" id="school">
+                            {{#each schools}}
+                                <option value="{{this.id}}">{{this.name}}</option>
+                            {{/each}}
+                        </select>
                 </div>
+
                 <div class="form-group">
-                    <label for="class">Class</label>
-                    <input type="text" class="form-control" id="class" placeholder="Class">
+                    <label for="subject">Class</label>
+                        <select class="form-control" name="classLevel" id="classLevel">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                            <option value="10">10</option>
+                            <option value="11">11</option>
+                            <option value="12">12</option>
+                        </select>
                 </div>
+
                 <div class="form-group">
                     <label for="subject">Subject</label>
-                    <input type="text" class="form-control" id="subject" placeholder="Subject">
+                    <select class="form-control" name="subject" id="subject">
+                        {{#each subjects}}
+                            <option value="{{this.id}}">{{this.name}}</option>
+                        {{/each}}
+                    </select>
                 </div>
+
                 <div class="form-group">
                     <div class="col-sm-4 col-sm-offset-2">
                         <button type="submit" class="btn btn-primary">Search</button>

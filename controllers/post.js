@@ -15,7 +15,7 @@ module.exports = {
         else{
             res.redirect('/');
         }
-  },
+    },
 
     postCreatePost: (req, res) => {
 

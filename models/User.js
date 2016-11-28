@@ -52,8 +52,6 @@ userSchema.method ({
             })
         }
 
-        //delete posts
-
         for (let post of this.posts) {
             Post.findById(post).then(post => {
                 post.remove();
