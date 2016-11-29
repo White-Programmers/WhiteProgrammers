@@ -27,10 +27,9 @@ module.exports = {
                     searchedPosts.push(post);
                 }
             }
+
+            res.render('home/results', {searchedPosts: searchedPosts});
         });
-
-
-        res.render('home/results', {searchedPosts: searchedPosts});
     },
 
     viewPostGet: (req, res) => {
